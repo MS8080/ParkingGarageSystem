@@ -1,0 +1,15 @@
+# Build files
+/build/
+/cmake-build-*/
+
+# macOS system files
+.DS_Store
+
+# Coverage output
+*.gcda
+*.gcno
+*.html
+
+# CLion and CMake cache
+.idea/
+CMakeCache.txt

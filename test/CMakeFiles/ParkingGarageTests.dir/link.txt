@@ -1,0 +1,1 @@
+/usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/ParkingGarageTests.dir/test_garage.c.o CMakeFiles/ParkingGarageTests.dir/unity.c.o CMakeFiles/ParkingGarageTests.dir/src/garage.c.o CMakeFiles/ParkingGarageTests.dir/src/functions.c.o -o ParkingGarageTests  --coverage
