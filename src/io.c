@@ -1,10 +1,32 @@
-//
-// Created by Mohamad Sakkal on 14.08.25.
-//
+/**
+* @file io.c
+ * @brief Handles file input/output for the Parking Garage Management System.
+ *
+ * This file contains functions responsible for writing the end-of-day
+ * report that includes all served cars, vehicles still inside,
+ * total revenue, and total number of cars served.
+ *
+ * @author
+ * Mohamad Sakkal
+ * @date 14.08.25
+ */
+
 #include <stdio.h>
-#include "garage.h"
+#include "structs.h"
 #include "io.h"
 
+/**
+ * @brief Writes the end-of-day parking garage report to a file.
+ *
+ * This report includes:
+ * - A list of all cars that entered and exited with timestamps
+ * - The total number of cars served during the day
+ * - The total revenue collected
+ * - A list of cars still inside the garage at closing time
+ *
+ * @param g Pointer to the Garage structure
+ * @param filename Name of the file to write the report to
+ */
 void write_report(const Garage *g, const char *filename) {
     FILE *file = fopen(filename, "w");
     if (!file) {

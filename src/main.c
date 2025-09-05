@@ -1,12 +1,30 @@
-//
-// Created by Mohamad Sakkal on 14.08.25.
-//
+/**
+ * @file main.c
+ * @brief Entry point for the Parking Garage Management System.
+ *
+ * This file provides a terminal-based interface for attendants to manage
+ * vehicle entry, exit, occupancy display, correction of times, and
+ * end-of-day report generation.
+ *
+ * @author
+ * Mohamad Sakkal
+ * @date 14.08.25
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include "garage.h"
 #include "functions.h"
 #include "io.h"
 
+/**
+ * @brief Main menu-driven loop for user interaction.
+ *
+ * Provides options to register vehicle entries and exits, view occupancy,
+ * generate reports, and correct log entries. Handles all user input/output.
+ *
+ * @return 0 on successful program termination
+ */
 int main() {
     Garage g;
     init_garage(&g);
@@ -19,6 +37,7 @@ int main() {
         printf("3. View Occupancy\n");
         printf("4. End Day & Generate Report\n");
         printf("5. Exit\n");
+        printf("6. Correct Entry/Exit Time\n");
         printf("Choose option: ");
 
         int choice;
@@ -72,9 +91,7 @@ int main() {
             case 5:
                 running = 0;
                 break;
-                printf("6. Correct Entry/Exit Time\n");
 
-                // inside switch:
             case 6:
                 printf("License Plate: ");
                 fgets(plate, sizeof(plate), stdin);
