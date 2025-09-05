@@ -65,7 +65,6 @@ add_test(NAME ParkingGarageTests COMMAND ParkingGarageTests)
 
 # Code Coverage Flags
 
-
 foreach(target ParkingGarageSystem ParkingGarageTests)
     target_compile_options(${target} PRIVATE -g -O0 --coverage)
     target_link_options(${target} PRIVATE --coverage)

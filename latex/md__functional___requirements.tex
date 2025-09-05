@@ -1,0 +1,64 @@
+\chapter{Functional Requirements – Parking Garage Management System }
+\hypertarget{md__functional___requirements}{}\label{md__functional___requirements}\index{Functional Requirements – Parking Garage Management System@{Functional Requirements – Parking Garage Management System}}
+\label{md__functional___requirements_autotoc_md0}%
+\Hypertarget{md__functional___requirements_autotoc_md0}%
+\hypertarget{md__functional___requirements_autotoc_md1}{}\doxysection{\texorpdfstring{FR1\+: Vehicle Entry Registration}{FR1\+: Vehicle Entry Registration}}\label{md__functional___requirements_autotoc_md1}
+The system shall allow the parking attendant to register a new vehicle entry by entering the license plate number and the current timestamp, only if the total number of vehicles in the garage is less than 100.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Reason\+:}} To handle new entries and respect the garage’s capacity.
+\item {\bfseries{Testable\+:}} Yes, by simulating a full garage and checking that entry is denied.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__functional___requirements_autotoc_md3}{}\doxysection{\texorpdfstring{FR2\+: Vehicle Exit Logging and Fee Calculation}{FR2\+: Vehicle Exit Logging and Fee Calculation}}\label{md__functional___requirements_autotoc_md3}
+The system shall allow the parking attendant to manually log a vehicle’s exit by entering the license plate and current timestamp. The system shall calculate the fee as €2 per full or partial hour and update the vehicle record accordingly.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Reason\+:}} To compute correct fees and allow exit tracking.
+\item {\bfseries{Testable\+:}} Yes, by providing entry/exit times and verifying the calculated fee.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__functional___requirements_autotoc_md5}{}\doxysection{\texorpdfstring{FR3\+: Occupancy Display}{FR3\+: Occupancy Display}}\label{md__functional___requirements_autotoc_md5}
+The system shall display the current number of vehicles inside the garage and list their license plates, when requested by the parking attendant.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Reason\+:}} Enables attendants to know how many and which vehicles are currently inside.
+\item {\bfseries{Testable\+:}} Yes, by asserting garage state after multiple entries/exits.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__functional___requirements_autotoc_md7}{}\doxysection{\texorpdfstring{FR4\+: Correction of Entry or Exit Times}{FR4\+: Correction of Entry or Exit Times}}\label{md__functional___requirements_autotoc_md7}
+The system shall allow the parking attendant to update a previously logged entry or exit time for a vehicle, by entering the license plate number and the new timestamp.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Reason\+:}} For error correction (e.\+g., wrong time input).
+\item {\bfseries{Testable\+:}} Yes, by modifying and validating the corrected time and recalculated fee.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__functional___requirements_autotoc_md9}{}\doxysection{\texorpdfstring{FR5\+: Full Garage Handling}{FR5\+: Full Garage Handling}}\label{md__functional___requirements_autotoc_md9}
+The system shall prevent new vehicle entries once the garage reaches 100 parked vehicles, and display an appropriate message to the parking attendant.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Reason\+:}} To enforce the fixed garage capacity.
+\item {\bfseries{Testable\+:}} Yes, by registering 100 entries and attempting a 101st.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__functional___requirements_autotoc_md11}{}\doxysection{\texorpdfstring{FR6\+: Daily Output File Generation}{FR6\+: Daily Output File Generation}}\label{md__functional___requirements_autotoc_md11}
+At the end of the day, the system shall generate an output file that includes\+:
+\begin{DoxyItemize}
+\item a list of all cars that entered and exited,
+\item the total number of cars served,
+\item the total revenue,
+\item and a list of cars that entered but did not exit before 22\+:00.
+\item {\bfseries{Reason\+:}} For end-\/of-\/day reporting and accountability.
+\item {\bfseries{Testable\+:}} Yes, by generating and parsing the output file. 
+\end{DoxyItemize}

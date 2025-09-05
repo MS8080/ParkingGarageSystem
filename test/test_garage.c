@@ -32,7 +32,9 @@ void test_calculate_duration_zero(void);
 void test_calculate_duration_partial_round_up(void);
 void test_calculate_duration_normal(void);
 void test_calculate_duration_wrap_around(void);
-
+void test_print_occupancy_output(void);
+void test_list_unexited_output(void);
+void test_register_exit_update_times(void);
 
 
 /// @brief Global Garage object used across all test cases
@@ -208,6 +210,9 @@ int main(void) {
     RUN_TEST(test_update_exit_time_not_exited);
     RUN_TEST(test_print_occupancy);
     RUN_TEST(test_list_unexited);
+    RUN_TEST(test_print_occupancy_output);
+    RUN_TEST(test_list_unexited_output);
+    RUN_TEST(test_register_exit_update_times);
 
     return UNITY_END();
 

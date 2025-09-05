@@ -1,7 +1,10 @@
 Vehicles still inside at closing time:
  - CAR2
-/Users/ms/CLionProjects/ParkingGarageSystem/test/test_garage.c:210:test_list_unexited:PASS
+/Users/ms/CLionProjects/ParkingGarageSystem/test/test_garage.c:212:test_list_unexited:PASS
+/Users/ms/CLionProjects/ParkingGarageSystem/test/test_garage.c:213:test_print_occupancy_output:PASS
+/Users/ms/CLionProjects/ParkingGarageSystem/test/test_garage.c:214:test_list_unexited_output:PASS
+/Users/ms/CLionProjects/ParkingGarageSystem/test/test_garage.c:215:test_register_exit_update_times:PASS
 
 -----------------------
-22 Tests 0 Failures 0 Ignored 
+25 Tests 0 Failures 0 Ignored 
 OK

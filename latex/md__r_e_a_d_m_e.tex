@@ -1,20 +1,20 @@
 \chapter{Parking Garage Management System }
 \hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Parking Garage Management System@{Parking Garage Management System}}
-\label{md__r_e_a_d_m_e_autotoc_md0}%
-\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\label{md__r_e_a_d_m_e_autotoc_md12}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md12}%
 
 
 A C-\/based terminal application to simulate and manage a public parking garage with a 100-\/vehicle capacity.
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Features}{Features}}\label{md__r_e_a_d_m_e_autotoc_md2}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysection{\texorpdfstring{Features}{Features}}\label{md__r_e_a_d_m_e_autotoc_md14}
 
 \begin{DoxyItemize}
 \item Register car {\bfseries{entry}} with timestamp and license plate
 \item Register car {\bfseries{exit}} and calculate fee (2€/hour, rounded up)
 \item Show current {\bfseries{occupancy}} and remaining spots
 \item {\bfseries{Edit}} or {\bfseries{correct}} entry/exit timestamps
-\item {\bfseries{Block entry}} when the garage is full
+\item Block entry when the garage is full
 \item Generate an {\bfseries{end-\/of-\/day report}} file with\+:
 \begin{DoxyItemize}
 \item All cars that entered and exited
@@ -25,27 +25,25 @@ A C-\/based terminal application to simulate and manage a public parking garage 
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{Testing and Coverage}{Testing and Coverage}}\label{md__r_e_a_d_m_e_autotoc_md4}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysection{\texorpdfstring{Testing and Coverage}{Testing and Coverage}}\label{md__r_e_a_d_m_e_autotoc_md16}
 
 \begin{DoxyItemize}
 \item Unit-\/tested using the {\bfseries{Unity framework}}
+\item Additional edge-\/case tests added for\+:
+\begin{DoxyItemize}
+\item {\ttfamily calculate\+\_\+duration()} edge cases (zero, partial, overnight)
+\item {\ttfamily update\+\_\+entry\+\_\+time()} and {\ttfamily update\+\_\+exit\+\_\+time()} failure scenarios
+\item {\ttfamily print\+\_\+occupancy()} and {\ttfamily list\+\_\+unexited()} output verification
+\end{DoxyItemize}
 \item {\bfseries{Test coverage}} measured using {\ttfamily gcovr}
-\item 7 logic-\/layer test cases covering core functionality
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysection{\texorpdfstring{Build Instructions}{Build Instructions}}\label{md__r_e_a_d_m_e_autotoc_md6}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{\texorpdfstring{Prerequisites}{Prerequisites}}\label{md__r_e_a_d_m_e_autotoc_md7}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysection{\texorpdfstring{Build Instructions}{Build Instructions}}\label{md__r_e_a_d_m_e_autotoc_md18}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md19}{}\doxysubsection{\texorpdfstring{Prerequisites}{Prerequisites}}\label{md__r_e_a_d_m_e_autotoc_md19}
 
 \begin{DoxyItemize}
 \item CLion (or any CMake-\/compatible C compiler)
 \item {\ttfamily gcovr} (optional, for coverage reports)
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{\texorpdfstring{Run the Application}{Run the Application}}\label{md__r_e_a_d_m_e_autotoc_md8}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{cmake\ -\/B\ build}
-\DoxyCodeLine{cmake\ -\/-\/build\ build}
-\DoxyCodeLine{./build/ParkingGarageSystem}
-
-\end{DoxyCode}
- 
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md20}{}\doxysubsection{\texorpdfstring{Run the Application}{Run the Application}}\label{md__r_e_a_d_m_e_autotoc_md20}
+\`{}\`{}\`{}bash cmake -\/B build cmake --build build ./build/\+Parking\+Garage\+System 

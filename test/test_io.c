@@ -10,17 +10,6 @@
 #include <string.h>
 
 
-// Declarations for external tests
-void test_write_report_creates_file(void);
-void test_write_report_empty_garage(void);
-void test_vehicle_still_inside_after_22(void);
-void test_parse_time_valid(void);
-void test_parse_time_midnight(void);
-void test_parse_time_boundary(void);
-void test_calculate_duration_zero(void);
-void test_calculate_duration_partial_round_up(void);
-void test_calculate_duration_normal(void);
-void test_calculate_duration_wrap_around(void);
 
 /**
  * @brief Test that write_report creates a report file with expected content.
