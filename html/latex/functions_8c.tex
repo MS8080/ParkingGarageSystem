@@ -1,0 +1,77 @@
+\doxysection{src/functions.c File Reference}
+\hypertarget{functions_8c}{}\label{functions_8c}\index{src/functions.c@{src/functions.c}}
+
+
+Implements helper functions for time parsing and duration calculation.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}functions.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Time \mbox{\hyperlink{functions_8c_a46d0215999eb167b41e502f1432a0930}{parse\+\_\+time}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Parses a time string in the format "{}\+HH\+:\+MM"{} into a Time struct. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{functions_8c_a4afd0c4bb35875903142ad0db853518e}{calculate\+\_\+duration}} (Time entry, Time exit)
+\begin{DoxyCompactList}\small\item\em Calculates the duration between two times, rounded up to full hours. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements helper functions for time parsing and duration calculation. 
+
+These functions are used to support the main logic in the Parking Garage Management System, such as converting string-\/based times and calculating time differences for fee computation.
+
+\begin{DoxyAuthor}{Author}
+Mohamad Sakkal 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+14.\+08.\+25 
+\end{DoxyDate}
+
+
+\label{doc-func-members}
+\Hypertarget{functions_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{functions_8c_a4afd0c4bb35875903142ad0db853518e}\index{functions.c@{functions.c}!calculate\_duration@{calculate\_duration}}
+\index{calculate\_duration@{calculate\_duration}!functions.c@{functions.c}}
+\doxysubsubsection{\texorpdfstring{calculate\_duration()}{calculate\_duration()}}
+{\footnotesize\ttfamily \label{functions_8c_a4afd0c4bb35875903142ad0db853518e} 
+int calculate\+\_\+duration (\begin{DoxyParamCaption}\item[{Time}]{entry}{, }\item[{Time}]{exit}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the duration between two times, rounded up to full hours. 
+
+Computes the number of hours (rounded up) between the given entry and exit times. Used to determine the parking fee.
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & Entry time \\
+\hline
+{\em exit} & Exit time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Duration in hours (minimum 0) 
+\end{DoxyReturn}
+\Hypertarget{functions_8c_a46d0215999eb167b41e502f1432a0930}\index{functions.c@{functions.c}!parse\_time@{parse\_time}}
+\index{parse\_time@{parse\_time}!functions.c@{functions.c}}
+\doxysubsubsection{\texorpdfstring{parse\_time()}{parse\_time()}}
+{\footnotesize\ttfamily \label{functions_8c_a46d0215999eb167b41e502f1432a0930} 
+Time parse\+\_\+time (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Parses a time string in the format "{}\+HH\+:\+MM"{} into a Time struct. 
+
+This function converts a string input into hour and minute values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The input time string in "{}\+HH\+:\+MM"{} format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Time struct containing hour and minute fields 
+\end{DoxyReturn}

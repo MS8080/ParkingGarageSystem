@@ -1,0 +1,89 @@
+\doxysection{include/functions.h File Reference}
+\hypertarget{functions_8h}{}\label{functions_8h}\index{include/functions.h@{include/functions.h}}
+
+
+Contains helper functions for time and input handling.  
+
+
+{\ttfamily \#include "{}structs.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_time}{Time}} \mbox{\hyperlink{functions_8h_a46d0215999eb167b41e502f1432a0930}{parse\+\_\+time}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Parses a time string in HH\+:MM format into a \doxylink{struct_time}{Time} struct. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{functions_8h_a4afd0c4bb35875903142ad0db853518e}{calculate\+\_\+duration}} (\mbox{\hyperlink{struct_time}{Time}} entry, \mbox{\hyperlink{struct_time}{Time}} exit)
+\begin{DoxyCompactList}\small\item\em Calculates the duration between two times (rounded up to full hours) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains helper functions for time and input handling. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{functions_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{functions_8h_a4afd0c4bb35875903142ad0db853518e}\index{functions.h@{functions.h}!calculate\_duration@{calculate\_duration}}
+\index{calculate\_duration@{calculate\_duration}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_duration()}{calculate\_duration()}}
+{\footnotesize\ttfamily \label{functions_8h_a4afd0c4bb35875903142ad0db853518e} 
+int calculate\+\_\+duration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_time}{Time}}}]{entry}{, }\item[{\mbox{\hyperlink{struct_time}{Time}}}]{exit}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the duration between two times (rounded up to full hours) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & Entry time \\
+\hline
+{\em exit} & Exit time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Duration in hours
+\end{DoxyReturn}
+Calculates the duration between two times (rounded up to full hours)
+
+Computes the number of hours (rounded up) between the given entry and exit times. Used to determine the parking fee.
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & Entry time \\
+\hline
+{\em exit} & Exit time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Duration in hours (minimum 0) 
+\end{DoxyReturn}
+\Hypertarget{functions_8h_a46d0215999eb167b41e502f1432a0930}\index{functions.h@{functions.h}!parse\_time@{parse\_time}}
+\index{parse\_time@{parse\_time}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{parse\_time()}{parse\_time()}}
+{\footnotesize\ttfamily \label{functions_8h_a46d0215999eb167b41e502f1432a0930} 
+\mbox{\hyperlink{struct_time}{Time}} parse\+\_\+time (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Parses a time string in HH\+:MM format into a \doxylink{struct_time}{Time} struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \doxylink{struct_time}{Time} string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Parsed \doxylink{struct_time}{Time}
+\end{DoxyReturn}
+Parses a time string in HH\+:MM format into a \doxylink{struct_time}{Time} struct.
+
+This function converts a string input into hour and minute values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The input time string in "{}\+HH\+:\+MM"{} format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_time}{Time} struct containing hour and minute fields 
+\end{DoxyReturn}

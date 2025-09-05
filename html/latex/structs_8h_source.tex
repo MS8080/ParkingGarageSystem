@@ -1,0 +1,30 @@
+\doxysection{structs.\+h}
+\hypertarget{structs_8h_source}{}\label{structs_8h_source}\index{include/structs.h@{include/structs.h}}
+\mbox{\hyperlink{structs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STRUCTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STRUCTS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_time_a15df9ba285cfd842f284025f904edc9c}{hour}};\ \ \ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_time_a5edffad982a0566ad01d95005474eae3}{minute}};\ }
+\DoxyCodeLine{00011\ \}\ \mbox{\hyperlink{struct_time}{Time}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_vehicle_a705c010c18cbd35c62565fb86558b121}{license\_plate}}[20];\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{struct_time}{Time}}\ \mbox{\hyperlink{struct_vehicle_a2d32750e82bdca563dbb55844f38b40b}{entry\_time}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{struct_time}{Time}}\ \mbox{\hyperlink{struct_vehicle_a5ff1f1518600a298788c1b926a62d1ef}{exit\_time}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vehicle_a08c979b479fae5d447399613f5d5fb5e}{has\_exited}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \}\ \mbox{\hyperlink{struct_vehicle}{Vehicle}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{struct_vehicle}{Vehicle}}\ \mbox{\hyperlink{struct_garage_a7610dade7476f8fe6ea3792ed5fd7947}{vehicles}}[100];\ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_garage_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_garage_ad9061f6d2c14ffc8aba80040935b7fc4}{total\_served}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_garage_a7f22b8656b8cfc304f0b8b1c7e67db2a}{total\_revenue}};\ \ \ }
+\DoxyCodeLine{00027\ \}\ \mbox{\hyperlink{struct_garage}{Garage}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//STRUCTS\_HUCTS\_H}}
+
+\end{DoxyCode}

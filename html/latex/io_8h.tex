@@ -1,0 +1,57 @@
+\doxysection{include/io.h File Reference}
+\hypertarget{io_8h}{}\label{io_8h}\index{include/io.h@{include/io.h}}
+
+
+Contains file input/output functions.  
+
+
+{\ttfamily \#include "{}structs.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{io_8h_ab562cb17322c5224045fd73ae68245e8}{write\+\_\+report}} (const \mbox{\hyperlink{struct_garage}{Garage}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{test__garage_8c_ac0450604fd343ae9cf9ea6b2372d6b17}{g}}, const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Writes the end-\/of-\/day report to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains file input/output functions. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{io_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{io_8h_ab562cb17322c5224045fd73ae68245e8}\index{io.h@{io.h}!write\_report@{write\_report}}
+\index{write\_report@{write\_report}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{write\_report()}{write\_report()}}
+{\footnotesize\ttfamily \label{io_8h_ab562cb17322c5224045fd73ae68245e8} 
+void write\+\_\+report (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_garage}{Garage}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Writes the end-\/of-\/day report to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to \doxylink{struct_garage}{Garage} \\
+\hline
+{\em filename} & Name of the output file\\
+\hline
+\end{DoxyParams}
+Writes the end-\/of-\/day report to a file.
+
+This report includes\+:
+\begin{DoxyItemize}
+\item A list of all cars that entered and exited with timestamps
+\item The total number of cars served during the day
+\item The total revenue collected
+\item A list of cars still inside the garage at closing time
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the \doxylink{struct_garage}{Garage} structure \\
+\hline
+{\em filename} & Name of the file to write the report to \\
+\hline
+\end{DoxyParams}

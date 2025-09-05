@@ -1,0 +1,192 @@
+\doxysection{src/garage.c File Reference}
+\hypertarget{garage_8c}{}\label{garage_8c}\index{src/garage.c@{src/garage.c}}
+
+
+Implements the core garage logic including entry, exit, correction, and occupancy tracking.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}garage.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{garage_8c_a05eee6547f97af988af93b408a14f957}{init\+\_\+garage}} (Garage \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{test__garage_8c_ac0450604fd343ae9cf9ea6b2372d6b17}{g}})
+\begin{DoxyCompactList}\small\item\em Initializes the garage state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{garage_8c_a9c98e85f12fcfaef24234bb166b27a90}{register\+\_\+entry}} (Garage \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{test__garage_8c_ac0450604fd343ae9cf9ea6b2372d6b17}{g}}, const char \texorpdfstring{$\ast$}{*}plate, Time time)
+\begin{DoxyCompactList}\small\item\em Registers a new vehicle entry if the garage is not full. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{garage_8c_acca9d14eaa687bd3f04f4d5923bb342c}{log\+\_\+exit}} (Garage \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{test__garage_8c_ac0450604fd343ae9cf9ea6b2372d6b17}{g}}, const char \texorpdfstring{$\ast$}{*}plate, Time time)
+\begin{DoxyCompactList}\small\item\em Logs the exit of a vehicle and calculates the parking fee. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{garage_8c_a2c464e46d0ef4a735ad5dcc1c47bddb0}{print\+\_\+occupancy}} (const Garage \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{test__garage_8c_ac0450604fd343ae9cf9ea6b2372d6b17}{g}})
+\begin{DoxyCompactList}\small\item\em Prints a list of all vehicles currently in the garage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{garage_8c_a99bd7c8863a602d0d240aa13fe44afc3}{list\+\_\+unexited}} (const Garage \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{test__garage_8c_ac0450604fd343ae9cf9ea6b2372d6b17}{g}})
+\begin{DoxyCompactList}\small\item\em Prints a list of all vehicles still inside the garage after closing. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{garage_8c_a2bcddf7063530fa77a805ada37f76e22}{update\+\_\+entry\+\_\+time}} (Garage \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{test__garage_8c_ac0450604fd343ae9cf9ea6b2372d6b17}{g}}, const char \texorpdfstring{$\ast$}{*}plate, Time new\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Updates the entry time of a vehicle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{garage_8c_aa31ea87e67b09e9857c1852e9d6580a4}{update\+\_\+exit\+\_\+time}} (Garage \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{test__garage_8c_ac0450604fd343ae9cf9ea6b2372d6b17}{g}}, const char \texorpdfstring{$\ast$}{*}plate, Time new\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Updates the exit time of a vehicle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the core garage logic including entry, exit, correction, and occupancy tracking. 
+
+This file handles the primary operations of the Parking Garage Management System, such as registering vehicles, logging exits, calculating fees, correcting timestamps, and displaying garage occupancy.
+
+\begin{DoxyAuthor}{Author}
+Mohamad Sakkal 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+14.\+08.\+25 
+\end{DoxyDate}
+
+
+\label{doc-func-members}
+\Hypertarget{garage_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{garage_8c_a05eee6547f97af988af93b408a14f957}\index{garage.c@{garage.c}!init\_garage@{init\_garage}}
+\index{init\_garage@{init\_garage}!garage.c@{garage.c}}
+\doxysubsubsection{\texorpdfstring{init\_garage()}{init\_garage()}}
+{\footnotesize\ttfamily \label{garage_8c_a05eee6547f97af988af93b408a14f957} 
+void init\+\_\+garage (\begin{DoxyParamCaption}\item[{Garage \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the garage state. 
+
+Sets all counters (number of vehicles, total served, total revenue) to zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the Garage structure to initialize \\
+\hline
+\end{DoxyParams}
+\Hypertarget{garage_8c_a99bd7c8863a602d0d240aa13fe44afc3}\index{garage.c@{garage.c}!list\_unexited@{list\_unexited}}
+\index{list\_unexited@{list\_unexited}!garage.c@{garage.c}}
+\doxysubsubsection{\texorpdfstring{list\_unexited()}{list\_unexited()}}
+{\footnotesize\ttfamily \label{garage_8c_a99bd7c8863a602d0d240aa13fe44afc3} 
+void list\+\_\+unexited (\begin{DoxyParamCaption}\item[{const Garage \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Prints a list of all vehicles still inside the garage after closing. 
+
+This is used in the daily report to identify cars that did not exit by 22\+:00.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the Garage structure \\
+\hline
+\end{DoxyParams}
+\Hypertarget{garage_8c_acca9d14eaa687bd3f04f4d5923bb342c}\index{garage.c@{garage.c}!log\_exit@{log\_exit}}
+\index{log\_exit@{log\_exit}!garage.c@{garage.c}}
+\doxysubsubsection{\texorpdfstring{log\_exit()}{log\_exit()}}
+{\footnotesize\ttfamily \label{garage_8c_acca9d14eaa687bd3f04f4d5923bb342c} 
+int log\+\_\+exit (\begin{DoxyParamCaption}\item[{Garage \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{plate}{, }\item[{Time}]{time}{}\end{DoxyParamCaption})}
+
+
+
+Logs the exit of a vehicle and calculates the parking fee. 
+
+Searches for the vehicle using its license plate and records the exit time. The fee is calculated as 2 euros per hour (rounded up).
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the Garage structure \\
+\hline
+{\em plate} & License plate of the vehicle \\
+\hline
+{\em time} & Time of exit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated fee if successful, -\/1 if the vehicle is not found or already exited 
+\end{DoxyReturn}
+\Hypertarget{garage_8c_a2c464e46d0ef4a735ad5dcc1c47bddb0}\index{garage.c@{garage.c}!print\_occupancy@{print\_occupancy}}
+\index{print\_occupancy@{print\_occupancy}!garage.c@{garage.c}}
+\doxysubsubsection{\texorpdfstring{print\_occupancy()}{print\_occupancy()}}
+{\footnotesize\ttfamily \label{garage_8c_a2c464e46d0ef4a735ad5dcc1c47bddb0} 
+void print\+\_\+occupancy (\begin{DoxyParamCaption}\item[{const Garage \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Prints a list of all vehicles currently in the garage. 
+
+Iterates through all vehicles and prints the ones that have not exited. Also shows a summary of the number of cars inside and remaining spots.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the Garage structure \\
+\hline
+\end{DoxyParams}
+\Hypertarget{garage_8c_a9c98e85f12fcfaef24234bb166b27a90}\index{garage.c@{garage.c}!register\_entry@{register\_entry}}
+\index{register\_entry@{register\_entry}!garage.c@{garage.c}}
+\doxysubsubsection{\texorpdfstring{register\_entry()}{register\_entry()}}
+{\footnotesize\ttfamily \label{garage_8c_a9c98e85f12fcfaef24234bb166b27a90} 
+int register\+\_\+entry (\begin{DoxyParamCaption}\item[{Garage \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{plate}{, }\item[{Time}]{time}{}\end{DoxyParamCaption})}
+
+
+
+Registers a new vehicle entry if the garage is not full. 
+
+Stores the license plate and entry time in the garage data structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the Garage structure \\
+\hline
+{\em plate} & License plate of the vehicle \\
+\hline
+{\em time} & Time of entry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the vehicle was successfully registered, -\/1 if the garage is full 
+\end{DoxyReturn}
+\Hypertarget{garage_8c_a2bcddf7063530fa77a805ada37f76e22}\index{garage.c@{garage.c}!update\_entry\_time@{update\_entry\_time}}
+\index{update\_entry\_time@{update\_entry\_time}!garage.c@{garage.c}}
+\doxysubsubsection{\texorpdfstring{update\_entry\_time()}{update\_entry\_time()}}
+{\footnotesize\ttfamily \label{garage_8c_a2bcddf7063530fa77a805ada37f76e22} 
+int update\+\_\+entry\+\_\+time (\begin{DoxyParamCaption}\item[{Garage \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{plate}{, }\item[{Time}]{new\+\_\+time}{}\end{DoxyParamCaption})}
+
+
+
+Updates the entry time of a vehicle. 
+
+Allows correction of mistakenly entered timestamps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the Garage structure \\
+\hline
+{\em plate} & License plate of the vehicle \\
+\hline
+{\em new\+\_\+time} & Corrected entry time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, -\/1 if vehicle was not found 
+\end{DoxyReturn}
+\Hypertarget{garage_8c_aa31ea87e67b09e9857c1852e9d6580a4}\index{garage.c@{garage.c}!update\_exit\_time@{update\_exit\_time}}
+\index{update\_exit\_time@{update\_exit\_time}!garage.c@{garage.c}}
+\doxysubsubsection{\texorpdfstring{update\_exit\_time()}{update\_exit\_time()}}
+{\footnotesize\ttfamily \label{garage_8c_aa31ea87e67b09e9857c1852e9d6580a4} 
+int update\+\_\+exit\+\_\+time (\begin{DoxyParamCaption}\item[{Garage \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{plate}{, }\item[{Time}]{new\+\_\+time}{}\end{DoxyParamCaption})}
+
+
+
+Updates the exit time of a vehicle. 
+
+Only applicable to vehicles that have already exited.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the Garage structure \\
+\hline
+{\em plate} & License plate of the vehicle \\
+\hline
+{\em new\+\_\+time} & Corrected exit time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, -\/1 if vehicle is not found or has not exited yet 
+\end{DoxyReturn}

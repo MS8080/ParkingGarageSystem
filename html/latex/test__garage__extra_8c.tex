@@ -1,0 +1,204 @@
+\doxysection{test/test\+\_\+garage\+\_\+extra.c File Reference}
+\hypertarget{test__garage__extra_8c}{}\label{test__garage__extra_8c}\index{test/test\_garage\_extra.c@{test/test\_garage\_extra.c}}
+
+
+Additional unit tests for \doxylink{garage_8c}{garage.\+c} edge cases.  
+
+
+{\ttfamily \#include "{}unity.\+h"{}}\newline
+{\ttfamily \#include "{}garage.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__garage__extra_8c_aa60cd9ecb7d9de02967687a5b6b3373c}{test\+\_\+update\+\_\+entry\+\_\+time\+\_\+not\+\_\+found}} (void)
+\begin{DoxyCompactList}\small\item\em Test \doxylink{garage_8c_a2bcddf7063530fa77a805ada37f76e22}{update\+\_\+entry\+\_\+time()} when vehicle is not in the garage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_a908a68b9a8403dfb84252222e791acd7}{test\+\_\+update\+\_\+exit\+\_\+time\+\_\+not\+\_\+found}} (void)
+\begin{DoxyCompactList}\small\item\em Test \doxylink{garage_8c_aa31ea87e67b09e9857c1852e9d6580a4}{update\+\_\+exit\+\_\+time()} when vehicle is not in the garage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_ac06fc94456b30f243eb08ec132b49c71}{test\+\_\+update\+\_\+exit\+\_\+time\+\_\+not\+\_\+exited}} (void)
+\begin{DoxyCompactList}\small\item\em Test \doxylink{garage_8c_aa31ea87e67b09e9857c1852e9d6580a4}{update\+\_\+exit\+\_\+time()} when vehicle has not yet exited. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_a01ecb9480169681a38548453499d99ee}{test\+\_\+print\+\_\+occupancy}} (void)
+\begin{DoxyCompactList}\small\item\em Test \doxylink{garage_8c_a2c464e46d0ef4a735ad5dcc1c47bddb0}{print\+\_\+occupancy()} output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_a9d07a846bd3f91e57cc415f6d7996a5a}{test\+\_\+list\+\_\+unexited}} (void)
+\begin{DoxyCompactList}\small\item\em Test \doxylink{garage_8c_a99bd7c8863a602d0d240aa13fe44afc3}{list\+\_\+unexited()} output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_aac40c7fde1ff72ad6a8b4f039ede514b}{test\+\_\+print\+\_\+occupancy\+\_\+output}} (void)
+\begin{DoxyCompactList}\small\item\em Test \doxylink{garage_8c_a2c464e46d0ef4a735ad5dcc1c47bddb0}{print\+\_\+occupancy()} output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_a361aa9b2732c3a643a0173836bfe09ae}{test\+\_\+list\+\_\+unexited\+\_\+output}} (void)
+\begin{DoxyCompactList}\small\item\em Test \doxylink{garage_8c_a99bd7c8863a602d0d240aa13fe44afc3}{list\+\_\+unexited()} output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_a4bcb7d04dbddbccd472d20ccc3b4d995}{test\+\_\+register\+\_\+exit\+\_\+update\+\_\+times}} (void)
+\begin{DoxyCompactList}\small\item\em Test combination scenario\+: Register a car, log exit, then immediately update times. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_aaf08a0bb5627e253beabdeb75e2e45c1}{test\+\_\+update\+\_\+entry\+\_\+time\+\_\+vehicle\+\_\+not\+\_\+found}} (void)
+\begin{DoxyCompactList}\small\item\em Tests \doxylink{garage_8c_a2bcddf7063530fa77a805ada37f76e22}{update\+\_\+entry\+\_\+time()} for a vehicle that does not exist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_a3c7060e8fe3ab34a7676dc6656b88000}{test\+\_\+update\+\_\+exit\+\_\+time\+\_\+vehicle\+\_\+not\+\_\+exited}} (void)
+\begin{DoxyCompactList}\small\item\em Tests \doxylink{garage_8c_aa31ea87e67b09e9857c1852e9d6580a4}{update\+\_\+exit\+\_\+time()} for a vehicle that hasn’t exited. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_a15e76760f7ccc29a81dfa343b62eb2d9}{test\+\_\+log\+\_\+exit\+\_\+cross\+\_\+hour}} (void)
+\begin{DoxyCompactList}\small\item\em Tests fee calculation when exit minutes are before entry minutes (cross-\/hour) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_aa1c910b16d70862f8c9567d39d45d0f4}{test\+\_\+log\+\_\+exit\+\_\+minutes\+\_\+before\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em Test \doxylink{garage_8c_acca9d14eaa687bd3f04f4d5923bb342c}{log\+\_\+exit()} when exit minutes \texorpdfstring{$<$}{<} entry minutes (cross-\/hour rounding) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_a3f862114eca68ef6877cdc9e6bca4f09}{test\+\_\+print\+\_\+occupancy\+\_\+empty}} (void)
+\begin{DoxyCompactList}\small\item\em Test \doxylink{garage_8c_a2c464e46d0ef4a735ad5dcc1c47bddb0}{print\+\_\+occupancy()} with empty garage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_a3b76bfa2fc81b1e89b670f3d76968ba1}{test\+\_\+list\+\_\+unexited\+\_\+empty}} (void)
+\begin{DoxyCompactList}\small\item\em Test \doxylink{garage_8c_a99bd7c8863a602d0d240aa13fe44afc3}{list\+\_\+unexited()} with empty garage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test__garage__extra_8c_ad1dafb786e6bd67fd51b88fd2eb1150c}{test\+\_\+log\+\_\+exit\+\_\+vehicle\+\_\+not\+\_\+found}} (void)
+\begin{DoxyCompactList}\small\item\em Test \doxylink{garage_8c_acca9d14eaa687bd3f04f4d5923bb342c}{log\+\_\+exit()} for a vehicle that does not exist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Additional unit tests for \doxylink{garage_8c}{garage.\+c} edge cases. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{test__garage__extra_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{test__garage__extra_8c_a9d07a846bd3f91e57cc415f6d7996a5a}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_list\_unexited@{test\_list\_unexited}}
+\index{test\_list\_unexited@{test\_list\_unexited}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_list\_unexited()}{test\_list\_unexited()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_a9d07a846bd3f91e57cc415f6d7996a5a} 
+void test\+\_\+list\+\_\+unexited (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test \doxylink{garage_8c_a99bd7c8863a602d0d240aa13fe44afc3}{list\+\_\+unexited()} output. 
+
+Captures stdout and verifies expected output. \Hypertarget{test__garage__extra_8c_a3b76bfa2fc81b1e89b670f3d76968ba1}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_list\_unexited\_empty@{test\_list\_unexited\_empty}}
+\index{test\_list\_unexited\_empty@{test\_list\_unexited\_empty}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_list\_unexited\_empty()}{test\_list\_unexited\_empty()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_a3b76bfa2fc81b1e89b670f3d76968ba1} 
+void test\+\_\+list\+\_\+unexited\+\_\+empty (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test \doxylink{garage_8c_a99bd7c8863a602d0d240aa13fe44afc3}{list\+\_\+unexited()} with empty garage. 
+
+\Hypertarget{test__garage__extra_8c_a361aa9b2732c3a643a0173836bfe09ae}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_list\_unexited\_output@{test\_list\_unexited\_output}}
+\index{test\_list\_unexited\_output@{test\_list\_unexited\_output}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_list\_unexited\_output()}{test\_list\_unexited\_output()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_a361aa9b2732c3a643a0173836bfe09ae} 
+void test\+\_\+list\+\_\+unexited\+\_\+output (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test \doxylink{garage_8c_a99bd7c8863a602d0d240aa13fe44afc3}{list\+\_\+unexited()} output. 
+
+Captures stdout into a buffer and checks if the expected license plate appears. \Hypertarget{test__garage__extra_8c_a15e76760f7ccc29a81dfa343b62eb2d9}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_log\_exit\_cross\_hour@{test\_log\_exit\_cross\_hour}}
+\index{test\_log\_exit\_cross\_hour@{test\_log\_exit\_cross\_hour}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_log\_exit\_cross\_hour()}{test\_log\_exit\_cross\_hour()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_a15e76760f7ccc29a81dfa343b62eb2d9} 
+void test\+\_\+log\+\_\+exit\+\_\+cross\+\_\+hour (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Tests fee calculation when exit minutes are before entry minutes (cross-\/hour) 
+
+\Hypertarget{test__garage__extra_8c_aa1c910b16d70862f8c9567d39d45d0f4}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_log\_exit\_minutes\_before\_entry@{test\_log\_exit\_minutes\_before\_entry}}
+\index{test\_log\_exit\_minutes\_before\_entry@{test\_log\_exit\_minutes\_before\_entry}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_log\_exit\_minutes\_before\_entry()}{test\_log\_exit\_minutes\_before\_entry()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_aa1c910b16d70862f8c9567d39d45d0f4} 
+void test\+\_\+log\+\_\+exit\+\_\+minutes\+\_\+before\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test \doxylink{garage_8c_acca9d14eaa687bd3f04f4d5923bb342c}{log\+\_\+exit()} when exit minutes \texorpdfstring{$<$}{<} entry minutes (cross-\/hour rounding) 
+
+\Hypertarget{test__garage__extra_8c_ad1dafb786e6bd67fd51b88fd2eb1150c}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_log\_exit\_vehicle\_not\_found@{test\_log\_exit\_vehicle\_not\_found}}
+\index{test\_log\_exit\_vehicle\_not\_found@{test\_log\_exit\_vehicle\_not\_found}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_log\_exit\_vehicle\_not\_found()}{test\_log\_exit\_vehicle\_not\_found()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_ad1dafb786e6bd67fd51b88fd2eb1150c} 
+void test\+\_\+log\+\_\+exit\+\_\+vehicle\+\_\+not\+\_\+found (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test \doxylink{garage_8c_acca9d14eaa687bd3f04f4d5923bb342c}{log\+\_\+exit()} for a vehicle that does not exist. 
+
+\Hypertarget{test__garage__extra_8c_a01ecb9480169681a38548453499d99ee}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_print\_occupancy@{test\_print\_occupancy}}
+\index{test\_print\_occupancy@{test\_print\_occupancy}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_print\_occupancy()}{test\_print\_occupancy()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_a01ecb9480169681a38548453499d99ee} 
+void test\+\_\+print\+\_\+occupancy (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test \doxylink{garage_8c_a2c464e46d0ef4a735ad5dcc1c47bddb0}{print\+\_\+occupancy()} output. 
+
+Captures stdout and verifies expected output. \Hypertarget{test__garage__extra_8c_a3f862114eca68ef6877cdc9e6bca4f09}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_print\_occupancy\_empty@{test\_print\_occupancy\_empty}}
+\index{test\_print\_occupancy\_empty@{test\_print\_occupancy\_empty}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_print\_occupancy\_empty()}{test\_print\_occupancy\_empty()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_a3f862114eca68ef6877cdc9e6bca4f09} 
+void test\+\_\+print\+\_\+occupancy\+\_\+empty (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test \doxylink{garage_8c_a2c464e46d0ef4a735ad5dcc1c47bddb0}{print\+\_\+occupancy()} with empty garage. 
+
+\Hypertarget{test__garage__extra_8c_aac40c7fde1ff72ad6a8b4f039ede514b}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_print\_occupancy\_output@{test\_print\_occupancy\_output}}
+\index{test\_print\_occupancy\_output@{test\_print\_occupancy\_output}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_print\_occupancy\_output()}{test\_print\_occupancy\_output()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_aac40c7fde1ff72ad6a8b4f039ede514b} 
+void test\+\_\+print\+\_\+occupancy\+\_\+output (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test \doxylink{garage_8c_a2c464e46d0ef4a735ad5dcc1c47bddb0}{print\+\_\+occupancy()} output. 
+
+Captures stdout into a buffer and checks if the expected license plate appears. \Hypertarget{test__garage__extra_8c_a4bcb7d04dbddbccd472d20ccc3b4d995}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_register\_exit\_update\_times@{test\_register\_exit\_update\_times}}
+\index{test\_register\_exit\_update\_times@{test\_register\_exit\_update\_times}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_register\_exit\_update\_times()}{test\_register\_exit\_update\_times()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_a4bcb7d04dbddbccd472d20ccc3b4d995} 
+void test\+\_\+register\+\_\+exit\+\_\+update\+\_\+times (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test combination scenario\+: Register a car, log exit, then immediately update times. 
+
+\Hypertarget{test__garage__extra_8c_aa60cd9ecb7d9de02967687a5b6b3373c}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_update\_entry\_time\_not\_found@{test\_update\_entry\_time\_not\_found}}
+\index{test\_update\_entry\_time\_not\_found@{test\_update\_entry\_time\_not\_found}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_update\_entry\_time\_not\_found()}{test\_update\_entry\_time\_not\_found()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_aa60cd9ecb7d9de02967687a5b6b3373c} 
+void test\+\_\+update\+\_\+entry\+\_\+time\+\_\+not\+\_\+found (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test \doxylink{garage_8c_a2bcddf7063530fa77a805ada37f76e22}{update\+\_\+entry\+\_\+time()} when vehicle is not in the garage. 
+
+\Hypertarget{test__garage__extra_8c_aaf08a0bb5627e253beabdeb75e2e45c1}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_update\_entry\_time\_vehicle\_not\_found@{test\_update\_entry\_time\_vehicle\_not\_found}}
+\index{test\_update\_entry\_time\_vehicle\_not\_found@{test\_update\_entry\_time\_vehicle\_not\_found}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_update\_entry\_time\_vehicle\_not\_found()}{test\_update\_entry\_time\_vehicle\_not\_found()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_aaf08a0bb5627e253beabdeb75e2e45c1} 
+void test\+\_\+update\+\_\+entry\+\_\+time\+\_\+vehicle\+\_\+not\+\_\+found (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Tests \doxylink{garage_8c_a2bcddf7063530fa77a805ada37f76e22}{update\+\_\+entry\+\_\+time()} for a vehicle that does not exist. 
+
+\Hypertarget{test__garage__extra_8c_ac06fc94456b30f243eb08ec132b49c71}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_update\_exit\_time\_not\_exited@{test\_update\_exit\_time\_not\_exited}}
+\index{test\_update\_exit\_time\_not\_exited@{test\_update\_exit\_time\_not\_exited}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_update\_exit\_time\_not\_exited()}{test\_update\_exit\_time\_not\_exited()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_ac06fc94456b30f243eb08ec132b49c71} 
+void test\+\_\+update\+\_\+exit\+\_\+time\+\_\+not\+\_\+exited (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test \doxylink{garage_8c_aa31ea87e67b09e9857c1852e9d6580a4}{update\+\_\+exit\+\_\+time()} when vehicle has not yet exited. 
+
+\Hypertarget{test__garage__extra_8c_a908a68b9a8403dfb84252222e791acd7}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_update\_exit\_time\_not\_found@{test\_update\_exit\_time\_not\_found}}
+\index{test\_update\_exit\_time\_not\_found@{test\_update\_exit\_time\_not\_found}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_update\_exit\_time\_not\_found()}{test\_update\_exit\_time\_not\_found()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_a908a68b9a8403dfb84252222e791acd7} 
+void test\+\_\+update\+\_\+exit\+\_\+time\+\_\+not\+\_\+found (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test \doxylink{garage_8c_aa31ea87e67b09e9857c1852e9d6580a4}{update\+\_\+exit\+\_\+time()} when vehicle is not in the garage. 
+
+\Hypertarget{test__garage__extra_8c_a3c7060e8fe3ab34a7676dc6656b88000}\index{test\_garage\_extra.c@{test\_garage\_extra.c}!test\_update\_exit\_time\_vehicle\_not\_exited@{test\_update\_exit\_time\_vehicle\_not\_exited}}
+\index{test\_update\_exit\_time\_vehicle\_not\_exited@{test\_update\_exit\_time\_vehicle\_not\_exited}!test\_garage\_extra.c@{test\_garage\_extra.c}}
+\doxysubsubsection{\texorpdfstring{test\_update\_exit\_time\_vehicle\_not\_exited()}{test\_update\_exit\_time\_vehicle\_not\_exited()}}
+{\footnotesize\ttfamily \label{test__garage__extra_8c_a3c7060e8fe3ab34a7676dc6656b88000} 
+void test\+\_\+update\+\_\+exit\+\_\+time\+\_\+vehicle\+\_\+not\+\_\+exited (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Tests \doxylink{garage_8c_aa31ea87e67b09e9857c1852e9d6580a4}{update\+\_\+exit\+\_\+time()} for a vehicle that hasn’t exited. 
+
