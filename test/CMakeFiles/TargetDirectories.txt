@@ -1,4 +1,0 @@
-/Users/ms/CLionProjects/ParkingGarageSystem/test/CMakeFiles/ParkingGarageSystem.dir
-/Users/ms/CLionProjects/ParkingGarageSystem/test/CMakeFiles/ParkingGarageTests.dir
-/Users/ms/CLionProjects/ParkingGarageSystem/test/CMakeFiles/edit_cache.dir
-/Users/ms/CLionProjects/ParkingGarageSystem/test/CMakeFiles/rebuild_cache.dir

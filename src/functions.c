@@ -41,8 +41,17 @@ Time parse_time(const char *str) {
  */
 int calculate_duration(Time entry, Time exit) {
     int start_minutes = entry.hour * 60 + entry.minute;
-    int end_minutes = exit.hour * 60 + exit.minute;
+    int end_minutes   = exit.hour * 60 + exit.minute;
     int diff = end_minutes - start_minutes;
-    if (diff <= 0) return 0;
-    return (diff + 59) / 60; // Round up to the next full hour
+
+    if (diff < 0) {
+        // Wrap-around for overnight parking
+        diff += 24 * 60;
+    } else if (diff == 0) {
+        // Same time → duration is zero
+        return 0;
+    }
+
+    // Round up to the next full hour
+    return (diff + 59) / 60;
 }

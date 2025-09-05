@@ -15,6 +15,26 @@
 #include "../include/garage.h"
 #include "../include/functions.h"
 
+// Declarations for external tests
+void test_update_entry_time_not_found(void);
+void test_update_exit_time_not_found(void);
+void test_update_exit_time_not_exited(void);
+void test_print_occupancy(void);
+void test_list_unexited(void);
+
+void test_write_report_creates_file(void);
+void test_write_report_empty_garage(void);
+void test_vehicle_still_inside_after_22(void);
+void test_parse_time_valid(void);
+void test_parse_time_midnight(void);
+void test_parse_time_boundary(void);
+void test_calculate_duration_zero(void);
+void test_calculate_duration_partial_round_up(void);
+void test_calculate_duration_normal(void);
+void test_calculate_duration_wrap_around(void);
+
+
+
 /// @brief Global Garage object used across all test cases
 Garage g;
 
@@ -154,9 +174,12 @@ void test_double_exit_disallowed(void) {
     TEST_ASSERT_EQUAL_INT(2, fee1);   // 1 hour × €2
     TEST_ASSERT_EQUAL_INT(-1, fee2);  // should be disallowed
 }
+
+
 int main(void) {
     UNITY_BEGIN();
 
+    // Original test_garage.c tests
     RUN_TEST(test_register_entry);
     RUN_TEST(test_log_exit_and_fee);
     RUN_TEST(test_calculate_duration_round_up);
@@ -165,5 +188,27 @@ int main(void) {
     RUN_TEST(test_garage_capacity_limit);
     RUN_TEST(test_double_exit_disallowed);
 
+    // From test_io.c
+    RUN_TEST(test_write_report_creates_file);
+    RUN_TEST(test_write_report_empty_garage);
+    RUN_TEST(test_vehicle_still_inside_after_22);
+
+    // From test_functions.c
+    RUN_TEST(test_parse_time_valid);
+    RUN_TEST(test_parse_time_midnight);
+    RUN_TEST(test_parse_time_boundary);
+    RUN_TEST(test_calculate_duration_zero);
+    RUN_TEST(test_calculate_duration_partial_round_up);
+    RUN_TEST(test_calculate_duration_normal);
+    RUN_TEST(test_calculate_duration_wrap_around);
+
+    //from test_garage_extra.c
+    RUN_TEST(test_update_entry_time_not_found);
+    RUN_TEST(test_update_exit_time_not_found);
+    RUN_TEST(test_update_exit_time_not_exited);
+    RUN_TEST(test_print_occupancy);
+    RUN_TEST(test_list_unexited);
+
     return UNITY_END();
+
 }

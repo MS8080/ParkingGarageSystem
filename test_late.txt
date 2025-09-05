@@ -1,0 +1,10 @@
+Daily Parking Garage Report
+===========================
+
+Served Cars:
+
+Total Cars Served: 1
+Total Revenue: €0.00
+
+Vehicles Still Inside:
+ - LATE88 (entered at 21:55)

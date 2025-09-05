@@ -1,0 +1,11 @@
+Daily Parking Garage Report
+===========================
+
+Served Cars:
+ - XYZ123 entered at 10:00, exited at 12:00
+
+Total Cars Served: 2
+Total Revenue: €4.00
+
+Vehicles Still Inside:
+ - ABC999 (entered at 21:30)
