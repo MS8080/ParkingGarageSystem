@@ -1,6 +1,6 @@
 #  Parking Garage Management System
 
-A C-based terminal application to manage a public parking garage with 100-vehicle capacity, open daily from 06:00 to 22:00.
+A C-based terminal application to simulate and manage a public parking garage with a 100-vehicle capacity.
 
 ---
 
@@ -8,16 +8,22 @@ A C-based terminal application to manage a public parking garage with 100-vehicl
 
 - Register car **entry** with timestamp and license plate
 - Register car **exit** and calculate fee (2€/hour, rounded up)
-- Show current **occupancy**
-- **Edit/correct** entry or exit timestamps
-- **Block entry** if garage is full
-- Generate end-of-day **report file** with:
-    - All cars that entered and exited
-    - Total number of cars served
-    - Total revenue
-    - Cars still inside after 22:00
-- **Unit-tested** using [Unity](https://github.com/ThrowTheSwitch/Unity)
-- Test coverage report using `gcovr`
+- Show current **occupancy** and remaining spots
+- **Edit** or **correct** entry/exit timestamps
+- **Block entry** when the garage is full
+- Generate an **end-of-day report** file with:
+  - All cars that entered and exited
+  - Total number of cars served
+  - Total revenue collected
+  - Cars still inside after 22:00
+
+---
+
+##  Testing and Coverage
+
+- Unit-tested using the **Unity framework**
+- **Test coverage** measured using `gcovr`
+- 7 logic-layer test cases covering core functionality
 
 ---
 
@@ -25,12 +31,13 @@ A C-based terminal application to manage a public parking garage with 100-vehicl
 
 ###  Prerequisites
 
-- CLion or any CMake-based C compiler
-- `gcovr` (optional, for test coverage)
+- CLion (or any CMake-compatible C compiler)
+- `gcovr` (optional, for coverage reports)
 
-###  Run Main Application
+### Run the Application
 
 ```bash
 cmake -B build
 cmake --build build
 ./build/ParkingGarageSystem
+```

@@ -12,4 +12,4 @@
 
 # CLion and CMake cache
 .idea/
-CMakeCache.txt
+CMakeCache.txtdocs/
